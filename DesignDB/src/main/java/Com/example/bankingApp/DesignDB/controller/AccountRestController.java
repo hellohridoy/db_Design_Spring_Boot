@@ -1,12 +1,9 @@
 package Com.example.bankingApp.DesignDB.controller;
 
 import Com.example.bankingApp.DesignDB.entity.Account;
-import Com.example.bankingApp.DesignDB.entity.Bank;
 import Com.example.bankingApp.DesignDB.service.AccountService;
-import Com.example.bankingApp.DesignDB.service.BankService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
