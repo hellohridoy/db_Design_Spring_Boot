@@ -10,37 +10,36 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/api/v1/branch/branch-info")
 @RequiredArgsConstructor
 public class BranchRestController {
 
     private final BranchService branchService;
 
-    @GetMapping
+    @GetMapping("/api/v1/branch/branch-info")
     public ResponseEntity<List<Branch>> getAllBranches() {
         List<Branch> branches = branchService.getAllBranches();
         return ResponseEntity.ok(branches);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/v1/branch/branch-info/{id}")
     public ResponseEntity<Branch> getBranchById(@PathVariable Long id) {
         Branch branch = branchService.getBranchById(id);
         return ResponseEntity.ok(branch);
     }
 
-    @PostMapping
+    @PostMapping("/api/v1/branch/branch-info")
     public ResponseEntity<Branch> createBranch(@RequestBody Branch branch) {
         Branch createdBranch = branchService.createBranch(branch);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdBranch);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/api/v1/branch/branch-info/{id}")
     public ResponseEntity<Branch> updateBranch(@PathVariable Long id, @RequestBody Branch branch) {
         Branch updatedBranch = branchService.updateBranch(id, branch);
         return ResponseEntity.ok(updatedBranch);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/api/v1/branch/branch-info/{id}")
     public ResponseEntity<Void> deleteBranch(@PathVariable Long id) {
         branchService.deleteBranch(id);
         return ResponseEntity.noContent().build();
